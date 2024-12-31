@@ -5,6 +5,9 @@ sample/*/package-lock.json
 node_modules/
 dist/
 
+# env files
+.env
+
 # IDE
 /.idea
 /.awcache
