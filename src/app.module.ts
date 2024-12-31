@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { AuthorsResolver } from './authors/models/author.resolver';
+import { AuthorModule } from './authors/author.module';
 
 @Module({
   imports: [
@@ -12,8 +12,9 @@ import { AuthorsResolver } from './authors/models/author.resolver';
       playground: true,
       autoSchemaFile: 'schema.gql',
     }),
+    AuthorModule,
   ],
   controllers: [AppController],
-  providers: [AppService, AuthorsResolver],
+  providers: [AppService],
 })
 export class AppModule {}
