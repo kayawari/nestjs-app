@@ -10,11 +10,20 @@ type Post {
 
 type Author {
   id: Float!
-  firstName: String
-  lastName: String
-  posts: [Post!]!
+  name: String!
+  email: String!
+  posts: [Post!]
 }
 
 type Query {
   authors: [Author!]!
+}
+
+type Mutation {
+  createAuthor(input: CreateAuthorInput!): Author!
+}
+
+input CreateAuthorInput {
+  name: String
+  email: String!
 }

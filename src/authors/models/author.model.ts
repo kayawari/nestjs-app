@@ -6,12 +6,12 @@ export class Author {
   @Field(() => Number)
   id: number;
 
-  @Field({ nullable: true })
-  firstName?: string;
+  @Field(() => String)
+  name?: string;
 
-  @Field({ nullable: true })
-  lastName?: string;
+  @Field(() => String)
+  email: string;
 
-  @Field(() => [Post])
-  posts: Post[];
+  @Field(() => [Post], { nullable: true })
+  posts?: Post[];
 }
